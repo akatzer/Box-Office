@@ -13,9 +13,8 @@ class App extends Component {
             <Wrapper>
                 <Title>Box Office</Title>
         
-       <MovieCard></MovieCard>
-                
-       
+            <MovieCard></MovieCard>
+                    
             </Wrapper>
         );
     }
