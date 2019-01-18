@@ -1,6 +1,9 @@
+#modalBody{
+    width:75%;
+}
 .movies {
-    float: left;
-    width: 200px;
+    display: inline-block;
+    width: 50%;
     height: 300px;
     margin: 20px
     

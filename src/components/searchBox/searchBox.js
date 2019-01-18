@@ -1,5 +1,5 @@
 import React from "react";
-import "./search.css";
+import "./searchBox.css";
 
 import {
   Input,
@@ -8,7 +8,7 @@ import {
   Button
  } from 'reactstrap';
 
-export default class Example extends React.Component {
+class searchBox extends React.Component {
   constructor(props) {
     super(props);
 
@@ -37,9 +37,9 @@ export default class Example extends React.Component {
     return (
       <div>
 
-<Card>
+<Card id="search" >
        
-        <CardBody id="search">
+        <CardBody >
           <CardTitle>Search</CardTitle>
  
 
@@ -59,4 +59,6 @@ export default class Example extends React.Component {
       </div>
     );
   }
-}
+};
+
+export default searchBox;
