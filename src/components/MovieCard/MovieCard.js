@@ -19,14 +19,14 @@ class MovieCard extends Component {
       isLoaded: false,
       modal: false,
     }
-    this.toggle = this.toggle.bind(this)
+    // this.toggle = this.toggle.bind(this)
   };
 
-  toggle() {
-    this.setState({
-      modal: !this.state.modal
-    })
-  }
+  // toggle() {
+  //   this.setState({
+  //     modal: !this.state.modal
+  //   })
+  // }
 
   componentDidMount() {
     fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=51743cb9828947ec2fa3ed3b2232d6d7&language=en-US&page=1&USA")
@@ -36,6 +36,7 @@ class MovieCard extends Component {
           isLoaded: true,
           movies: json,
         })
+        console.log(json);
       });
   }
   render() {
@@ -57,13 +58,16 @@ class MovieCard extends Component {
               {/* {mov.title} */}
 
               <div className='image-container'>
-                <img id='poster' alt={mov.title} value={mov.title} src={"http://image.tmdb.org/t/p/w185/" + mov.poster_path} onClick={this.toggle} />
+                <img id='poster' alt={mov.title} value={mov.title} src={"http://image.tmdb.org/t/p/w185/" + mov.poster_path} onClick={() => this.openModal(mov.id)} />
               </div>
 
               {/* Rating: {mov.vote_average} */}
 
-              <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.key}>
-                <ModalHeader toggle={this.toggle}>{mov.title}</ModalHeader>
+              <Modal isOpen={this.state.opened === mov.id} className={this.key}>
+                <ModalHeader>{mov.title}</ModalHeader>
+                <ModalHeader>{mov.release_date}</ModalHeader>
+                <ModalHeader>{mov.overview}</ModalHeader>
+                <ModalHeader>{mov.popularity}</ModalHeader>
                 <ModalBody>
                   <Form>
                     <FormGroup>
@@ -87,8 +91,8 @@ class MovieCard extends Component {
                   </Form>
                 </ModalBody>
                 <ModalFooter>
-                  <Button color="primary" onClick={this.toggle}>Submit</Button>{' '}
-                  <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                  <Button color="primary" onClick={this.closeModal}>Submit</Button>{' '}
+                  <Button color="secondary" onClick={this.closeModal}>Cancel</Button>
                 </ModalFooter>
               </Modal>
             </div>
@@ -103,6 +107,20 @@ class MovieCard extends Component {
     }
 
   }
+
+  openModal = (id) => {
+    console.log(id);
+    this.setState({
+      opened: id
+    });    
+  }
+
+
+  closeModal = () => {
+    this.setState({
+      opened: null
+    });    
+  }  
 }
 
 export default MovieCard;
