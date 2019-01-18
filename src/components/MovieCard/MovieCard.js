@@ -2,6 +2,9 @@ import "./MovieCard.css";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input, FormText, Form } from 'reactstrap';
 import React, { Component } from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2b921be6a2621184484976047d2ce17143d4561b
 
 // const MovieCard = props => (
 
@@ -123,6 +126,7 @@ class MovieCard extends Component {
     });    
   }  
 }
+<<<<<<< HEAD
 
 
 =======
@@ -247,6 +251,8 @@ class MovieCard extends Component {
     });    
   }  
 }
+>>>>>>> 2b921be6a2621184484976047d2ce17143d4561b
+=======
 >>>>>>> 2b921be6a2621184484976047d2ce17143d4561b
 
 export default MovieCard;
