@@ -50,20 +50,20 @@ class MovieCard extends Component {
     else {
 
       return (
-        <div>
+        <div id="modalBody">
 
           {movies.results.map(mov => (
 
-            <div class='movies col-md-2' key={mov.id}>
+            <div  class='movies col-md-2' key={mov.id}>
               {/* {mov.title} */}
 
-              <div className='image-container'>
+              <div  className='image-container'>
                 <img id='poster' alt={mov.title} value={mov.title} src={"http://image.tmdb.org/t/p/w185/" + mov.poster_path} onClick={() => this.openModal(mov.id)} />
               </div>
 
               {/* Rating: {mov.vote_average} */}
 
-              <Modal isOpen={this.state.opened === mov.id} className={this.key}>
+              <Modal  isOpen={this.state.opened === mov.id} className={this.key}>
                 <ModalHeader>{mov.title}</ModalHeader>
                 <ModalHeader>{mov.release_date}</ModalHeader>
                 <ModalHeader>{mov.overview}</ModalHeader>

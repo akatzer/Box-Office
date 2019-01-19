@@ -1,13 +1,13 @@
+.login{
+    float:right;
+    margin:5px;
+    background-color: grey;
+}
+
 .title {
     width: 100%;
     text-align: center;
-    color: white;
-}
-
-.scoreSummary {
-    width: 190px;
-    color: white;
-    text-align: center;
-    margin-bottom: 20px;
-    color: white;
+    background-color: #5a40509c;
+    box-shadow: 2px 2px 4px #888888;
+    
 }

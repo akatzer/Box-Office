@@ -1,61 +1,61 @@
 [{
         "id": 1,
-        "image": "./assets/images/Alita.jpg",
+        "image": "./assets/images/drake_meme.jpg",
         "clicked": false
     },
     {
         "id": 2,
-        "image": "./assets/images/Avengers.jpg",
+        "image": "./assets/images/drake_meme.jpg",
         "clicked": false
     },
     {
         "id": 3,
-        "image": "./assets/images/City.jpg",
+        "image": "./assets/images/drake_meme.jpg",
         "clicked": false
     },
     {
         "id": 4,
-        "image": "./assets/images/Coldpursuit.jpg",
+        "image": "./assets/images/drake_meme.jpg",
         "clicked": false
     },
     {
         "id": 5,
-        "image": "./assets/images/glass.jpg",
+        "image": "./assets/images/drake_meme.jpg",
         "clicked": false
     },
     {
         "id": 6,
-        "image": "./assets/images/IT.jpg",
+        "image": "./assets/images/drake_meme.jpg",
         "clicked": false
     },
     {
         "id": 7,
-        "image": "./assets/images/Upside.jpg",
+        "image": "./assets/images/drake_meme.jpg",
         "clicked": false
     },
     {
         "id": 8,
-        "image": "./assets/images/US.jpg",
+        "image": "./assets/images/drake_meme.jpg",
         "clicked": false
     },
     {
         "id": 9,
-        "image": "./assets/images/Men.jpg",
+        "image": "./assets/images/drake_meme.jpg",
         "clicked": false
     },
     {
         "id": 10,
-        "image": "./assets/images/ToyStory.jpg",
+        "image": "./assets/images/drake_meme.jpg",
         "clicked": false
     },
     {
         "id": 11,
-        "image": "./assets/images/Little.jpg",
+        "image": "./assets/images/drake_meme.jpg",
         "clicked": false
     },
     {
         "id": 12,
-        "image": "./assets/images/LionKing.jpg",
+        "image": "./assets/images/drake_meme.jpg",
         "clicked": false
     }
 ]
