@@ -2,9 +2,9 @@ import React from "react";
 import "./Title.css";
 
 import {
-    Button,
-    Jumbotron
+    Button
 } from 'reactstrap';
+
 
 
 
@@ -16,13 +16,8 @@ class Title extends React.Component {
         return (
 
             <div className="title">
-                <Jumbotron className="title">
-                    <h1 className="display-3">Box Office!</h1>
-                    <p className="lead">
-                        <Button className="login">Login</Button>
-                        <Button className="login" >Sign Up</Button>
-                    </p>
-                </Jumbotron>
+            <h1 className="letter">Box Office!</h1>
+                <Button className="login"><i class="fas fa-user"></i></Button>
             </div>
 
         );

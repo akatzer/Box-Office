@@ -1,13 +1,25 @@
 .login{
     float:right;
-    margin:5px;
+    margin:30px;
+    border-radius: 75%;
     background-color: grey;
 }
 
 .title {
+    padding-top:0;
     width: 100%;
-    text-align: center;
-    background-color: #5a40509c;
-    box-shadow: 2px 2px 4px #888888;
+    color:white;
+    background-color:#e9ecef;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 2px 2px 4px #888888;    
+}
+
+.letter{
+    display: block;
+    margin-top:10px;
+    margin-left: 40px;
+    margin-bottom: 100px;
+    font-size: 100px;
+    float:left;
     
 }

@@ -1,5 +1,5 @@
 #search {
-    background: #fff;
+    background: grey;
     border-radius: 2px;
     position: sticky;
     top:0;
@@ -8,8 +8,9 @@
     width: 400px;
     margin:30px;
     padding: 30px;
-    float:left;
-    
+    float:left;    
+    box-shadow: 4px 4px 2px #888888;
+    background-color: #e9ecef;    
 }
 #searchDrop{
     margin: 10px;

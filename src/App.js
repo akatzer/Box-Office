@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import MovieCard from "./components/MovieCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import matches from "./moviecards.json";
 import Search from "./components/searchBox/searchBox";
 import "./App.css";
 
