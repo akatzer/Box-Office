@@ -1,5 +1,5 @@
 import "./MovieCard.css";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input, FormText, Form } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input, Form } from 'reactstrap';
 import React, { Component } from 'react';
 
 // const MovieCard = props => (
@@ -54,16 +54,18 @@ class MovieCard extends Component {
 
           {movies.results.map(mov => (
 
-            <div  class='movies col-md-2' key={mov.id}>
+            <div class='movies col-md-2' key={mov.id}>
               {/* {mov.title} */}
 
-              <div  className='image-container'>
+              <div className='image-container'>
                 <img id='poster' alt={mov.title} value={mov.title} src={"http://image.tmdb.org/t/p/w185/" + mov.poster_path} onClick={() => this.openModal(mov.id)} />
               </div>
 
+
+
               {/* Rating: {mov.vote_average} */}
 
-              <Modal  isOpen={this.state.opened === mov.id} className={this.key}>
+              <Modal isOpen={this.state.opened === mov.id} className={this.key}>
                 <ModalHeader>{mov.title}</ModalHeader>
                 <ModalHeader>{mov.release_date}</ModalHeader>
                 <ModalHeader>{mov.overview}</ModalHeader>
@@ -112,15 +114,15 @@ class MovieCard extends Component {
     console.log(id);
     this.setState({
       opened: id
-    });    
+    });
   }
 
 
   closeModal = () => {
     this.setState({
       opened: null
-    });    
-  }  
+    });
+  }
 }
 
 export default MovieCard;
