@@ -1,5 +1,5 @@
 import "./MovieCard.css";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input, Form } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, FormGroup, Form } from 'reactstrap';
 import React, { Component } from 'react';
 
 // const MovieCard = props => (
@@ -65,37 +65,36 @@ class MovieCard extends Component {
 
               {/* Rating: {mov.vote_average} */}
 
-              <Modal isOpen={this.state.opened === mov.id} className={this.key}>
-                <ModalHeader>{mov.title}</ModalHeader>
-                <ModalHeader>{mov.release_date}</ModalHeader>
-                <ModalHeader>{mov.overview}</ModalHeader>
-                <ModalHeader>{mov.popularity}</ModalHeader>
+              <Modal isOpen={this.state.opened === mov.id} className={this.key} toggle={this.toggle}>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick={this.closeModal}>
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              
+              <ModalHeader id="title">{mov.title} </ModalHeader>
+              
+            
+                <ModalHeader>Release Date: {mov.release_date}</ModalHeader>
+                <ModalHeader>Overview: {mov.overview}</ModalHeader>
+                {/* <ModalHeader>{mov.popularity}</ModalHeader> */}
                 <ModalBody>
                   <Form>
                     <FormGroup>
-                      <Label for="name">Name</Label>
-                      <Input type="name" name="name" id="name" placeholder="Enter Name Here" />
                       <FormGroup>
-                        <Label for="review">Review</Label>
-                        <Input type="textarea" name="review" id="review" />
-                        <FormGroup>
-                          <Label for="score">Score (out of 5)</Label>
-                          <Input type="select" name="score" id="score">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                          </Input>
-                        </FormGroup>
+                        <FormGroup>Have you seen this already? Tell us what you thought!</FormGroup>
                       </FormGroup>
+
+
                     </FormGroup>
                   </Form>
                 </ModalBody>
-                <ModalFooter>
-                  <Button color="primary" onClick={this.closeModal}>Submit</Button>{' '}
-                  <Button color="secondary" onClick={this.closeModal}>Cancel</Button>
-                </ModalFooter>
+                <div id="modalButtons">
+                  <Button className="modalButtonUp" onClick={this.closeModal}><i class="fas fa-thumbs-up"></i></Button>
+                  <Button className="modalButtonDown" onClick={this.closeModal}><i class="fas fa-thumbs-down"></i></Button>
+                </div>
+
+
+
+
               </Modal>
             </div>
 

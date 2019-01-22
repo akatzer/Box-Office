@@ -22,4 +22,36 @@
     object-fit: fill;     
     box-shadow: 5px 5px 4px #888888;
 }
-  
+
+.modalButtonUp {
+    width: 33%;
+
+    margin: 0 20px 10px 0
+}
+.modalButtonDown {
+    width: 33%;
+
+    margin: 0 20px 10px 20px
+}
+
+#modalButtons {
+    text-align: center;
+}
+
+div.modal-body {
+    padding-bottom: 0;
+
+
+}   
+
+button.close {
+    float: right
+}
+span {
+    float: right;
+    margin-right: 5px
+}
+
+#title {
+    padding-top: 0;
+}
