@@ -1,6 +1,7 @@
 import "./MovieCard.css";
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, Form } from 'reactstrap';
 import React, { Component } from 'react';
+import API from "../../utils/API"
 
 // const MovieCard = props => (
 
@@ -35,10 +36,16 @@ class MovieCard extends Component {
         this.setState({
           isLoaded: true,
           movies: json,
+  
         })
         console.log(json);
       });
   }
+
+  thumbsUp = title => {
+    API.saveReview(title)
+      .catch(err => console.log(err));
+  };
   render() {
 
     var { isLoaded, movies } = this.state
@@ -60,8 +67,6 @@ class MovieCard extends Component {
               <div className='image-container'>
                 <img id='poster' alt={mov.title} value={mov.title} src={"http://image.tmdb.org/t/p/w185/" + mov.poster_path} onClick={() => this.openModal(mov.id)} />
               </div>
-
-
 
               {/* Rating: {mov.vote_average} */}
 
