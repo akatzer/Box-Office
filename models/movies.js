@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const movieSchema = new Schema({
+const movieReview = new Schema({
   title: { type: String, required: true },
-  voteAverage: { type: Number, required: true },
+  review: { type: Boolean, required: true },
 });
 
-const Movie = mongoose.model("Movie", movieSchema);
+const Movie = mongoose.model("Movie", movieReview);
 
 module.exports = Movie;
 
