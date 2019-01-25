@@ -54,14 +54,18 @@ class MovieCard extends Component {
 
           {movies.results.map(mov => (
 
-            <div class='movies col-md-2' key={mov.id}>
+            <div class='movies col-md-0' key={mov.id}>
               {/* {mov.title} */}
 
               <div className='image-container'>
-                <img id='poster' alt={mov.title} value={mov.title} src={"http://image.tmdb.org/t/p/w185/" + mov.poster_path} onClick={() => this.openModal(mov.id)} />
+                <figure>
+                    <img id='poster' alt={mov.title} value={mov.title} src={"http://image.tmdb.org/t/p/w185/" + mov.poster_path} onClick={() => this.openModal(mov.id)} />
+                      <figcaption>
+                        <h2 className="mov.title">{this.props.title}</h2>
+                      </figcaption>
+                </figure>
+
               </div>
-
-
 
               {/* Rating: {mov.vote_average} */}
 
@@ -70,39 +74,31 @@ class MovieCard extends Component {
                     <span aria-hidden="true">&times;</span>
                   </button>
               
-              <ModalHeader id="title">{mov.title} </ModalHeader>
-              
-            
+                <ModalHeader id="title">{mov.title} </ModalHeader>
                 <ModalHeader>Release Date: {mov.release_date}</ModalHeader>
                 <ModalHeader>Overview: {mov.overview}</ModalHeader>
+
                 {/* <ModalHeader>{mov.popularity}</ModalHeader> */}
                 <ModalBody>
+
                   <Form>
                     <FormGroup>
                       <FormGroup>
                         <FormGroup>Have you seen this already? Tell us what you thought!</FormGroup>
                       </FormGroup>
-
-
                     </FormGroup>
                   </Form>
                 </ModalBody>
+
                 <div id="modalButtons">
                   <Button className="modalButtonUp" onClick={this.closeModal}><i class="fas fa-thumbs-up"></i></Button>
                   <Button className="modalButtonDown" onClick={this.closeModal}><i class="fas fa-thumbs-down"></i></Button>
                 </div>
 
-
-
-
               </Modal>
             </div>
 
-
-
           ))}
-
-
         </div>
       )
     }
@@ -116,12 +112,18 @@ class MovieCard extends Component {
     });
   }
 
-
   closeModal = () => {
     this.setState({
       opened: null
     });
   }
+
+  test2 = () => {
+    console.log("test");
+  }
 }
 
+export const test = () => {
+  this.test2();
+}
 export default MovieCard;

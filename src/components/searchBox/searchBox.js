@@ -1,5 +1,6 @@
 import React from "react";
 import "./searchBox.css";
+import test from "../MovieCard";
 
 import {
   Input,
@@ -32,26 +33,33 @@ class searchBox extends React.Component {
     });
   }
 
+  click() {
+    console.log("test");
+
+    const MovieCard = this.props._array[0].type();
+    MovieCard.test();
+  }
+test(res) {
+  res.test();
+}
 
   render() {
     return (
       <div>
 
-<Card id="search" >
+      <Card id="search" >
        
         <CardBody >
-          <CardTitle>Search</CardTitle>
- 
-
+          <CardTitle>Search Your Favorite Movie Here</CardTitle>
           <Input id="searchInput" />
 
-          <Input id="searchDrop" type="select">
+         {/* <Input id="searchDrop" type="select">
           <option>Genre</option>
           <option>Audience Score</option>
           <option>Title</option>
-        </Input>
+        </Input> */}
 
-        <Button id="searchButton" color="secondary" size="sm">Small Button</Button>
+        <Button id="searchButton" color="secondary" size="sm" onClick={this.click}>SUBMIT</Button>
 
                  
         </CardBody>
