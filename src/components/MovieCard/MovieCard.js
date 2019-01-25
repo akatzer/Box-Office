@@ -29,7 +29,7 @@ class MovieCard extends Component {
   // }
 
   componentDidMount() {
-    fetch(process.env.movieDb_key)
+    fetch(process.env.REACT_APP_API_URL)
       .then(res => res.json())
       .then(json => {
         this.setState({
