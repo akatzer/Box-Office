@@ -32,7 +32,7 @@ class Title extends React.Component {
                 <h1 className="letter">Box Office!</h1>
 
                 <div>
-                    <Button className="login" onClick={this.toggle}><i class="fas fa-user"></i>{this.props.buttonLabel}</Button>
+                    <Button className="login" onClick={this.toggle}><i className="fas fa-user"></i>{this.props.buttonLabel}</Button>
                     <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                         <ModalHeader toggle={this.toggle}>Login/Sign Up</ModalHeader>
                         <ModalBody>

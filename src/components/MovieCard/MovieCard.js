@@ -29,7 +29,7 @@ class MovieCard extends Component {
   // }
 
   componentDidMount() {
-    fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=51743cb9828947ec2fa3ed3b2232d6d7&language=en-US&page=1&USA")
+    fetch(process.env.REACT_APP_API_URL)
       .then(res => res.json())
       .then(json => {
         this.setState({
