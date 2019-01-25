@@ -1,8 +1,7 @@
 import "./MovieCard.css";
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, Form } from 'reactstrap';
 import React, { Component } from 'react';
-import API from "../../utils/API"
-
+require("dotenv").config();
 // const MovieCard = props => (
 
 // 	<div onClick={() => props.setClicked(props.id)} className="card col-md-3">
@@ -30,22 +29,16 @@ class MovieCard extends Component {
   // }
 
   componentDidMount() {
-    fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=51743cb9828947ec2fa3ed3b2232d6d7&language=en-US&page=1&USA")
+    fetch(process.env.movieDb_key)
       .then(res => res.json())
       .then(json => {
         this.setState({
           isLoaded: true,
           movies: json,
-  
         })
         console.log(json);
       });
   }
-
-  thumbsUp = title => {
-    API.saveReview(title)
-      .catch(err => console.log(err));
-  };
   render() {
 
     var { isLoaded, movies } = this.state
@@ -67,6 +60,8 @@ class MovieCard extends Component {
               <div className='image-container'>
                 <img id='poster' alt={mov.title} value={mov.title} src={"http://image.tmdb.org/t/p/w185/" + mov.poster_path} onClick={() => this.openModal(mov.id)} />
               </div>
+
+
 
               {/* Rating: {mov.vote_average} */}
 
