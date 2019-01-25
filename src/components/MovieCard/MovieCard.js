@@ -1,7 +1,7 @@
 import "./MovieCard.css";
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, Form } from 'reactstrap';
 import React, { Component } from 'react';
-require("dotenv").config();
+
 // const MovieCard = props => (
 
 // 	<div onClick={() => props.setClicked(props.id)} className="card col-md-3">
@@ -29,7 +29,7 @@ class MovieCard extends Component {
   // }
 
   componentDidMount() {
-    fetch(process.env.movieDb_key)
+    fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=51743cb9828947ec2fa3ed3b2232d6d7&language=en-US&page=1&USA")
       .then(res => res.json())
       .then(json => {
         this.setState({
