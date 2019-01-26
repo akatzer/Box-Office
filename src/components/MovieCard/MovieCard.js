@@ -59,10 +59,13 @@ class MovieCard extends Component {
 
               <div className='image-container'>
                 <figure>
+
                     <img id='poster' alt={mov.title} value={mov.title} src={"http://image.tmdb.org/t/p/w185/" + mov.poster_path} onClick={() => this.openModal(mov.id)} />
+
                       <figcaption>
-                        <h2 className="mov.title">{this.props.title}</h2>
+                        <h2 className="FigTitle" >{mov.title}</h2>
                       </figcaption>
+
                 </figure>
 
               </div>
