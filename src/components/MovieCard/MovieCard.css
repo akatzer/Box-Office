@@ -11,6 +11,7 @@
 }
 .movies {
     display: inline-block;
+    position: initial;
     height: 300px;
     margin: 20px;    
     background-color: #e9ecef;
@@ -18,10 +19,18 @@
 }
 
 #poster{
-    background-color: #888888;
-    height: 300px;
-    object-fit: fill;     
-    box-shadow: 5px 5px 4px #888888;
+    
+    background-color: #ffbdbd;
+    /* height: 300px;*/
+    max-width: 100%; 
+    vertical-align: middle; 
+    display: table-column-group;
+    /*object-fit: fill;   
+    display: -webkit-flex; /* Safari *
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ 
+  display: flex;   
+  flex-wrap: wrap;*/
+    
 }
 
 .modalButtonUp {
@@ -60,7 +69,18 @@ span {
     padding-top: 0;
 }
 
-.movie figcaption {
-    padding: 4em;
-    background-color: white;
+.image-container figcaption {
+    padding: .65em;
+    background-color:#131b20;
+    
+    
+}
+
+.FigTitle {
+    width: 150px;
+    font-size: 0.575rem;
+    font-display: center; 
+    font-weight: 200;
+    color: white;
+    max-height: 10px;
 }

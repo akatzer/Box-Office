@@ -1,6 +1,6 @@
 import React from "react";
 import "./searchBox.css";
-import test from "../MovieCard";
+
 
 import {
   Input,
