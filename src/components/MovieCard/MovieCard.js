@@ -1,15 +1,7 @@
 import "./MovieCard.css";
 import { Button, Modal, ModalHeader, ModalBody, FormGroup, Form } from 'reactstrap';
 import React, { Component } from 'react';
-
-// const MovieCard = props => (
-
-// 	<div onClick={() => props.setClicked(props.id)} className="card col-md-3">
-// 		<div className="img-container">
-// 			<img alt={props.name} src={props.image} />
-// 		</div>
-// 	</div>
-// );
+import API from "../../utils/API"
 
 class MovieCard extends Component {
   constructor(props) {
@@ -19,17 +11,28 @@ class MovieCard extends Component {
       isLoaded: false,
       modal: false,
     }
-    // this.toggle = this.toggle.bind(this)
   };
 
-  // toggle() {
-  //   this.setState({
-  //     modal: !this.state.modal
-  //   })
-  // }
+
+  handleClickUp = (e) => {
+    let title = e.target.value;
+    console.log(title)
+    API.saveReview({
+      title: title,
+      review: "true"
+    })
+  }
+
+  handleClickDown = (e) => {
+    let title = e.target.value;
+    API.saveReview({
+      title: title,
+      review: "false"
+    })
+  }
 
   componentDidMount() {
-    fetch(process.env.REACT_APP_API_URL)
+    fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=51743cb9828947ec2fa3ed3b2232d6d7&language=en-US&page=1&USA")
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -54,7 +57,7 @@ class MovieCard extends Component {
 
           {movies.results.map(mov => (
 
-            <div class='movies col-md-0' key={mov.id}>
+            <div className='movies col-md-0' key={mov.id}>
               {/* {mov.title} */}
 
               <div className='image-container'>
@@ -73,7 +76,7 @@ class MovieCard extends Component {
               {/* Rating: {mov.vote_average} */}
 
               <Modal isOpen={this.state.opened === mov.id} className={this.key} toggle={this.toggle}>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick={this.closeModal}>
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.closeModal}>
                     <span aria-hidden="true">&times;</span>
                   </button>
               
@@ -94,8 +97,8 @@ class MovieCard extends Component {
                 </ModalBody>
 
                 <div id="modalButtons">
-                  <Button className="modalButtonUp" onClick={this.closeModal}><i class="fas fa-thumbs-up"></i></Button>
-                  <Button className="modalButtonDown" onClick={this.closeModal}><i class="fas fa-thumbs-down"></i></Button>
+                  <Button className="modalButtonUp" value={mov.title} onClick={(e) => this.handleClickUp(e)}><i className="fas fa-thumbs-up"></i></Button>
+                  <Button className="modalButtonDown" value={mov.title} onClick={(e) => this.handleClickDown(e)}><i className="fas fa-thumbs-down"></i></Button>
                 </div>
 
               </Modal>
