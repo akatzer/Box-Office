@@ -1,6 +1,6 @@
 import React from "react";
 import "./searchBox.css";
-import test from "../MovieCard";
+
 
 import {
   Input,
@@ -59,7 +59,7 @@ test(res) {
           <option>Title</option>
         </Input> */}
 
-        <Button id="searchButton" color="secondary" size="sm" onClick={this.click}>SUBMIT</Button>
+        <Button id="searchButton" color="secondary" size="sm">SUBMIT</Button>
 
                  
         </CardBody>

@@ -3,31 +3,34 @@ const db = require("../models");
 
 // This file empties the Books collection and inserts the books below
 
-mongoose.connect(
-  process.env.MONGODB_URI ||
-  "mongodb://localhost/boxofficedb"
-);
+// mongoose.connect(
+//   process.env.MONGODB_URI ||
+//   "mongodb://localhost/yourDataBase"
+// );
 
-const movieSeed = [
-  {
-    title: "BumbleBee",
-    review: true
-  },
-  {
-      title: "Aquaman",
-      review: true
-  }
-  
-];
+// const specificSeed = [
+//   {
+//     key: "value",
+//     etc: "etc"
+//   },
+//   {
+//     key: "value",
+//     etc: "etc"
+//   },
+//   {
+//     key: "value",
+//     etc: "etc"
+//   },
+// ];
 
-db.Movie
-  .remove({})
-  .then(() => db.Movie.collection.insertMany(movieSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+// db.Specific
+//   .remove({})
+//   .then(() => db.Book.collection.insertMany(bookSeed))
+//   .then(data => {
+//     console.log(data.result.n + " records inserted!");
+//     process.exit(0);
+//   })
+//   .catch(err => {
+//     console.error(err);
+//     process.exit(1);
+//   });
